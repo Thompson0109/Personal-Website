@@ -11,4 +11,11 @@
     <None Include="wwwroot\css\main.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\fancybox\" />
+    <Folder Include="wwwroot\js\animateNumber\" />
+    <Folder Include="wwwroot\js\nice-select\" />
+    <Folder Include="wwwroot\js\perfect-scrollbar\" />
+  </ItemGroup>
+
 </Project>
