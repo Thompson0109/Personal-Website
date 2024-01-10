@@ -13,6 +13,7 @@
 }
 .theme-red .fg-theme {
     margin: auto;
+    text-align: center;
 }
 
 .ti-layout-automation:before{
@@ -32,4 +33,8 @@
    ========================================================================== */
    .grid-item .img-place {
     min-height: 14em;
+    max-height: 14em;
    }
+
+  
+  
