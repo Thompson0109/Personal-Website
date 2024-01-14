@@ -1,3 +1,4 @@
+const { Console } = require('console');
 
 
 function downloadCV() {
@@ -11,4 +12,5 @@ function downloadCV() {
   
     document.body.removeChild(link);
   }
+
 
