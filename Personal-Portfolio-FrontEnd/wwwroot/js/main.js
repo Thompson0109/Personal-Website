@@ -1,6 +1,3 @@
-const { Console } = require('console');
-
-
 function downloadCV() {
     var link = document.createElement('a');
     link.href = '../assets/files/Louis Thompson-Resume-October-2023.pdf'; 
