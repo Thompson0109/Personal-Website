@@ -1,0 +1,63 @@
+.config {
+    display:none;
+}
+
+/* ==========================================================================
+   Services
+   ========================================================================== */
+
+
+.page-service .card .iconic {
+    margin: auto;
+
+}
+.theme-red .fg-theme {
+    margin: auto;
+    text-align: center;
+}
+
+.ti-layout-automation:before{
+    content: "\e665";
+
+}
+.ti-layout-web:before{
+    content: "\e6ec";
+}
+
+.ti-layout-api:before {
+    content: "\e692";
+}
+
+
+/* ==========================================================================
+   ========================================================================== */
+   .grid-item .img-place {
+    min-height: 14em;
+    max-height: 14em;
+   }
+
+
+   /* ==========================================================================
+   Contact Section
+   ========================================================================== */
+
+  #insta-a:before {
+    content: "\e692";
+}
+
+   #linkedin-a{
+    margin:auto;
+   }
+   #linkedin-a{
+    margin:auto;
+   }
+   
+   .icon .ti-phone{
+    content: "\e692";
+
+   }
+  
+
+
+  
+  
