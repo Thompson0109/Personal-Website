@@ -5,6 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Personal_Portfolio_FrontEnd</RootNamespace>
+    <UserSecretsId>70366fb4-77a8-4d44-8fd6-3b161ba42bc2</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
+  </ItemGroup>
 
 </Project>

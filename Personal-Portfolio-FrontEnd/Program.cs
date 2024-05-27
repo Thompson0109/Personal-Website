@@ -1,7 +1,21 @@
+using MongoDB.Driver;
+using Personal_Portfolio_FrontEnd.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+
+    var connectionString = configuration.GetConnectionString("BlogsMongo");
+
+    return new MongoClient(connectionString);
+});
+
+builder.Services.AddTransient<IBlogsRepository, BlogsRepository>(); 
 
 var app = builder.Build();
 
