@@ -1,5 +1,6 @@
-const { Console } = require('console');
-
+/*On Page Refresh*/
+updateAge();
+/*On Page Refresh*/
 
 function downloadCV() {
     var link = document.createElement('a');
@@ -11,6 +12,27 @@ function downloadCV() {
     link.click();
   
     document.body.removeChild(link);
-  }
+}
+
+function calculateAge(birthDate) {
+    const birthDateObj = new Date(birthDate); 
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDateObj.getFullYear();
+    const month = today.getMonth() - birthDateObj.getMonth();
+
+    if (month < 0 || (month === 0 && today.getDate() < birthDateObj.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+function updateAge() {
+    const birthDate = "1999-09-01";
+    const age = calculateAge(birthDate);
+    document.getElementById("age").textContent = age;
+}
+
+
 
 
