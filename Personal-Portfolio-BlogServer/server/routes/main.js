@@ -3,20 +3,34 @@ const router = express.Router();
 const Post = require('../models/post');
 
 router.get('', async(req,res) => {
-    const locals = {
-     title: "Louis's NodeJS Blog",
-     description: "Simple Blog created with NodesJs, Express & MonoDb."
-    }
-    //Get's blogs from db.
-    try{
-        const data = await Post.find();
-        res.render('index', {locals, data});
+    try {
+        const locals = {
+            title: "Louis's NodeJS Blog",
+            description: "Simple Blog created with NodesJs, Express & MonoDb."
+           }
+        let perPage = 2; 
+        //req.query.page is each page of pagination
+        let page = req.query.page || 1;
+        const data = await Post.aggregate([{ $sort: {createdAt: -1}}])
+        .skip(perPage * page - perPage)
+        .limit(perPage)
+        .exec();
+
+        const count = await Post.countDocuments({});
+        const nextPage = parseInt(page) + 1;
+        const hasNextPage = nextPage <= Math.ceil(count / perPage);
+        
+        res.render('index', {
+            locals,
+            data,
+            current: page,
+            nextPage: hasNextPage ? nextPage : null,
+            currentRoute: '/'
+        });
 
     } catch (error) {
         console.log(error);
     }
-    
-    res.render('index', { locals });
 });
 
 //**
