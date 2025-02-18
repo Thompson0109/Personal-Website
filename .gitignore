@@ -10,6 +10,10 @@
 *.userosscache
 *.sln.docstates
 
+#mongo db 
+node_modules/
+.env
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
